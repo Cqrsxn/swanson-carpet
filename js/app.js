@@ -83,7 +83,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 // ── Clickable Service Cards ──────────────────────
-function scrollTo(id) {
+function scrollToSection(id) {
   const target = document.getElementById(id);
   if (!target) return;
   const offset = document.getElementById('header').offsetHeight + 12;
@@ -94,7 +94,7 @@ function scrollTo(id) {
 document.querySelectorAll('.service-card').forEach(card => {
   const isEmergency = card.classList.contains('service-card--highlight');
   const targetId    = isEmergency ? 'emergency' : 'booking';
-  const ctaText     = isEmergency ? 'Call or Text Now →' : 'Book This Service →';
+  const ctaText     = isEmergency ? 'Call or Text Now' : 'Book This Service';
 
   // Add "Book →" cue
   const cta = document.createElement('span');
@@ -104,7 +104,7 @@ document.querySelectorAll('.service-card').forEach(card => {
 
   // Make card clickable
   card.classList.add('clickable');
-  card.addEventListener('click', () => scrollTo(targetId));
+  card.addEventListener('click', () => scrollToSection(targetId));
 });
 
 // ── Smooth Scroll ────────────────────────────────
