@@ -828,6 +828,19 @@ input, select, textarea {
 .booking-section {
   background: var(--cream);
 }
+
+/* Calendly embed wrapper */
+.calendly-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--beige-dark);
+}
+
+/* ── OLD CUSTOM CALENDAR (kept for reference, not used) ── */
 .booking-wrapper {
   max-width: 760px;
   margin: 0 auto;

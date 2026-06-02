@@ -94,14 +94,23 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ================================================
-   BOOKING CALENDAR
-   ================================================
-   Integration points marked with:
-   // [INTEGRATION] — replace this block to connect
-   to Google Calendar, Calendly, Supabase, or Firebase
+   BOOKING
+   Powered by Calendly inline widget.
+   The embed script is loaded directly in index.html.
+   No additional JS needed here.
    ================================================ */
 
+// Calendly is handled via the embed in index.html.
+// To swap to a different Calendly link, update the
+// data-url attribute on .calendly-inline-widget.
+
 const BookingCalendar = (() => {
+  function init() { /* Calendly handles booking */ }
+  return { init };
+})();
+
+if (false) { // legacy custom calendar — kept for reference only
+const BookingCalendarLegacy = (() => {
 
   // State
   let state = {
@@ -393,5 +402,6 @@ const BookingCalendar = (() => {
 
 })();
 
-// Start the booking calendar
+})(); } // end legacy custom calendar block
+
 BookingCalendar.init();
