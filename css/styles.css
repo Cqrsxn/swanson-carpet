@@ -168,13 +168,22 @@ input, select, textarea {
 }
 
 /* ── Animations ─────────────────────────────────── */
+/* Default: fully visible. JS adds .js-loaded to <body> to enable animations. */
 .fade-in, .fade-in-up {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.fade-in { transform: none; }
-.fade-in-up { transform: translateY(28px); }
-.fade-in.visible, .fade-in-up.visible {
+.fade-in-up { transform: none; }
+
+/* Only animate when JS has confirmed the page is ready */
+.js-loaded .fade-in,
+.js-loaded .fade-in-up {
+  opacity: 0;
+}
+.js-loaded .fade-in-up { transform: translateY(28px); }
+
+.js-loaded .fade-in.visible,
+.js-loaded .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }

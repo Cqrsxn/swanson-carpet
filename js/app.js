@@ -50,10 +50,12 @@ function updateActiveNavLink() {
 }
 
 // ── Intersection Observer for Fade Animations ────
+// Enable animations only after JS is ready — content is always visible as fallback
+document.body.classList.add('js-loaded');
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Stagger cards slightly
       const delay = entry.target.closest('.services-grid, .why-grid, .before-after-grid, .testimonials-grid, .areas-grid')
         ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 80
         : 0;
@@ -63,9 +65,14 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
 document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => observer.observe(el));
+
+// Safety fallback: if observer never fires (e.g. old browser), show everything after 1s
+setTimeout(() => {
+  document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => el.classList.add('visible'));
+}, 1000);
 
 // ── FAQ Accordion ────────────────────────────────
 document.querySelectorAll('.faq-question').forEach(btn => {
