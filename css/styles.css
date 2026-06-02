@@ -546,6 +546,26 @@ input, select, textarea {
 .service-icon--gold   { background: var(--gold-pale); color: var(--gold); }
 .service-icon--navy   { background: rgba(27,58,75,0.08); color: var(--navy); }
 .service-icon--red    { background: #FFF5F5; color: #E74C3C; }
+.service-card.clickable {
+  cursor: pointer;
+}
+.service-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.02em;
+  transition: gap var(--transition), color var(--transition);
+}
+.service-card--highlight .service-card-cta {
+  color: #E74C3C;
+}
+.service-card:hover .service-card-cta {
+  gap: 9px;
+}
 .service-card h3 {
   font-size: 1.05rem;
   font-weight: 700;

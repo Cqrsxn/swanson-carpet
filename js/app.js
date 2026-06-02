@@ -82,6 +82,31 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
+// ── Clickable Service Cards ──────────────────────
+function scrollTo(id) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  const offset = document.getElementById('header').offsetHeight + 12;
+  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.service-card').forEach(card => {
+  const isEmergency = card.classList.contains('service-card--highlight');
+  const targetId    = isEmergency ? 'emergency' : 'booking';
+  const ctaText     = isEmergency ? 'Call or Text Now →' : 'Book This Service →';
+
+  // Add "Book →" cue
+  const cta = document.createElement('span');
+  cta.className = 'service-card-cta';
+  cta.innerHTML = `${ctaText} <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+  card.appendChild(cta);
+
+  // Make card clickable
+  card.classList.add('clickable');
+  card.addEventListener('click', () => scrollTo(targetId));
+});
+
 // ── Smooth Scroll ────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
