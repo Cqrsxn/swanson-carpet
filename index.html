@@ -53,13 +53,6 @@
   <header id="header" class="header">
     <nav class="nav container">
       <a href="#home" class="nav-logo">
-        <span class="logo-icon">
-          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 24 Q8 10 16 14 Q24 18 30 4" stroke="#4A9B8E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M2 20 Q8 8 16 12 Q24 16 30 2" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-            <rect x="0" y="24" width="32" height="4" rx="2" fill="#4A9B8E"/>
-          </svg>
-        </span>
         <span class="logo-text">
           <span class="logo-main">Swanson</span>
           <span class="logo-sub">Carpet &amp; Upholstery Cleaning</span>
@@ -103,7 +96,7 @@
         Fresh, Professional Carpet &amp; Upholstery Cleaning in <span class="headline-accent">Bluffton, SC</span>
       </h1>
       <p class="hero-sub fade-in">
-        Remove allergens, stubborn stains, pet odors, and embedded dirt from your carpets, rugs, couches, and mattresses — leaving your home smelling clean, feeling fresh, and looking its best.
+        Remove allergens, stubborn stains, pet odors, and embedded dirt from your carpets, rugs, couches, and mattresses. Your home comes back smelling clean, feeling fresh, and looking its best.
       </p>
       <div class="hero-ctas fade-in">
         <a href="#booking" class="btn btn-primary btn-lg">
@@ -183,89 +176,133 @@
   </div>
 
   <!-- ================================================
+       BOOKING CALENDAR
+  ================================================ -->
+  <section id="booking" class="section booking-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Book an Appointment</h2>
+        <p class="section-desc">Choose a date and time that works for you. Heather will confirm by phone or text.</p>
+      </div>
+      <!-- Calendly inline widget -->
+      <div class="calendly-wrapper">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/carsonhandran/30min" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       EMERGENCY CTA BANNER
+  ================================================ -->
+  <section class="emergency-section" id="emergency">
+    <div class="container emergency-inner">
+      <div class="emergency-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="emergency-text">
+        <h3>Fresh Spill? Act Fast!</h3>
+        <p>Wine, coffee, pet accidents: the sooner we treat it, the better the results. Don't wait, call or text now.</p>
+      </div>
+      <div class="emergency-actions">
+        <a href="tel:2073374841" class="btn btn-white">Call Now</a>
+        <a href="sms:2073374841" class="btn btn-outline-white">Text for Help</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
        SERVICES
   ================================================ -->
   <section id="services" class="section services-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">What We Clean</span>
         <h2 class="section-title">Professional Cleaning Services for Every Surface</h2>
         <p class="section-desc">From wall-to-wall carpets to delicate upholstery, we bring Lowcountry-fresh cleanliness to every corner of your home or business.</p>
       </div>
       <div class="services-grid">
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h3>Carpet Cleaning</h3>
           <p>Wall-to-wall carpet deep cleaning using high heat extraction to lift embedded dirt, dust, and allergens from every fiber.</p>
-        </div>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2"/><path d="M8 7v14"/><path d="M16 7v14"/></svg>
           </div>
           <h3>Upholstery &amp; Sofa Cleaning</h3>
           <p>Refresh couches, chairs, and upholstered furniture. Remove odors, stains, and allergens from fabric and cushions.</p>
-        </div>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/><path d="M6 6V4"/><path d="M18 6V4"/></svg>
           </div>
           <h3>Area Rugs &amp; Runners</h3>
-          <p>Gentle yet thorough cleaning for area rugs, runners, and specialty rugs — protecting fibers while eliminating ground-in soil.</p>
-        </div>
+          <p>Gentle yet thorough cleaning for area rugs, runners, and specialty rugs, protecting fibers while eliminating ground-in soil.</p>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--navy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20v2H2z"/><path d="M4 19V8a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v11"/><path d="M4 12h16"/><path d="M8 12v7"/><path d="M16 12v7"/></svg>
           </div>
           <h3>Mattress Cleaning</h3>
-          <p>Deep clean mattresses to remove dust mites, allergens, body oils, and bacteria — for a healthier, fresher night's sleep.</p>
-        </div>
+          <p>Deep clean mattresses to remove dust mites, allergens, body oils, and bacteria, for a healthier, fresher night's sleep.</p>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/></svg>
           </div>
           <h3>Move-In / Move-Out</h3>
           <p>Make your new place spotless before moving in, or restore carpets to great condition before handing back keys.</p>
-        </div>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/></svg>
           </div>
           <h3>Short-Term Rentals</h3>
           <p>Keep your Airbnb or VRBO property guest-ready between stays. Fast, thorough turnovers that leave renters impressed.</p>
-        </div>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up service-card--highlight">
+        <a href="#emergency" class="service-card fade-in-up service-card--highlight">
           <div class="service-badge">Emergency</div>
           <div class="service-icon service-icon--red">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <h3>Emergency Stain Cleanup</h3>
-          <p>Wine spills, pet accidents, kids' messes — the sooner we treat it, the better. Call or text for urgent response.</p>
-        </div>
+          <p>Wine spills, pet accidents, kids' messes. The sooner we treat it, the better. Call or text for urgent response.</p>
+          <span class="service-card-cta">Call or Text Now →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--navy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/><path d="M6 2l2 4"/><path d="M18 2l-2 4"/></svg>
           </div>
           <h3>Pet &amp; Animal Accidents</h3>
-          <p>Enzyme-targeted treatment to fully eliminate pet urine, feces, and odors — not just mask them. Safe for pets and kids.</p>
-        </div>
+          <p>Enzyme-targeted treatment to fully eliminate pet urine, feces, and odors completely, not just mask them. Safe for pets and kids.</p>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
-        <div class="service-card fade-in-up">
+        <a href="#booking" class="service-card fade-in-up">
           <div class="service-icon service-icon--gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>Commercial Cleaning</h3>
-          <p>Office carpets, lobbies, conference rooms, and common areas — we keep your business looking its professional best.</p>
-        </div>
+          <p>Office carpets, lobbies, conference rooms, and common areas. We keep your business looking its professional best.</p>
+          <span class="service-card-cta">Book This Service →</span>
+        </a>
 
       </div>
 
@@ -302,11 +339,10 @@
         </div>
       </div>
       <div class="about-content fade-in-up">
-        <span class="section-label">Meet Your Cleaner</span>
         <h2 class="section-title">Hi, I'm Heather Swanson</h2>
-        <p class="about-lead">Owner and operator of Swanson Carpet &amp; Upholstery Cleaning — proudly serving Bluffton and the entire Lowcountry.</p>
-        <p>I started this business because I believe your home should feel as good as it looks. There's something special about walking into a room with truly clean carpets — the freshness, the comfort, the peace of mind.</p>
-        <p>Every job I take, I handle personally. That means when you book with me, you get <strong>consistent, careful, detail-focused cleaning</strong> — not a rotating crew of unfamiliar faces. I use professional-grade equipment, high heat extraction, and vapor steam cleaning to get deep-down clean results you can actually feel.</p>
+        <p class="about-lead">Owner and operator of Swanson Carpet &amp; Upholstery Cleaning, proudly serving Bluffton and the entire Lowcountry.</p>
+        <p>I started this business because I believe your home should feel as good as it looks. There's something special about walking into a room with truly clean carpets: the freshness, the comfort, the peace of mind.</p>
+        <p>Every job I take, I handle personally. That means when you book with me, you get <strong>consistent, careful, detail-focused cleaning</strong>, not a rotating crew of unfamiliar faces. I use professional-grade equipment, high heat extraction, and vapor steam cleaning to get deep-down clean results you can actually feel.</p>
         <p>I offer chemical-free cleaning options that are safe for your kids, your pets, and your whole family. Whether you need a single room freshened up or a full commercial property cleaned, I bring the same care and professionalism to every job.</p>
         <div class="about-features">
           <div class="about-feature">
@@ -337,39 +373,32 @@
   <section class="section why-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Why Swanson Cleaning</span>
         <h2 class="section-title">The Lowcountry's Trusted Choice for Clean</h2>
       </div>
       <div class="why-grid">
         <div class="why-card fade-in-up">
-          <div class="why-number">01</div>
           <h3>You Know Who's Coming</h3>
-          <p>Heather is the owner and operator. Every appointment is handled by her personally — no subcontractors, no strangers, no surprises.</p>
+          <p>Heather is the owner and operator. Every appointment is handled by her personally, with no subcontractors, no strangers, no surprises.</p>
         </div>
         <div class="why-card fade-in-up">
-          <div class="why-number">02</div>
           <h3>Deep Clean, Not Surface Clean</h3>
-          <p>High heat extraction pulls dirt, allergens, and bacteria from deep within carpet fibers — not just the surface layer.</p>
+          <p>High heat extraction pulls dirt, allergens, and bacteria from deep within carpet fibers, not just the surface layer.</p>
         </div>
         <div class="why-card fade-in-up">
-          <div class="why-number">03</div>
           <h3>Safe for Your Whole Family</h3>
           <p>Chemical-free cleaning options using vapor steam and heat. Completely safe for babies, children, and pets.</p>
         </div>
         <div class="why-card fade-in-up">
-          <div class="why-number">04</div>
           <h3>Truly Local</h3>
           <p>Based right here in Bluffton, SC. Supporting a local small business means supporting your neighbor and your community.</p>
         </div>
         <div class="why-card fade-in-up">
-          <div class="why-number">05</div>
           <h3>Emergency Response</h3>
-          <p>Accidents happen. Call or text for urgent stain treatment — acting fast dramatically improves results on fresh spills.</p>
+          <p>Accidents happen. Call or text for urgent stain treatment. Acting fast dramatically improves results on fresh spills.</p>
         </div>
         <div class="why-card fade-in-up">
-          <div class="why-number">06</div>
           <h3>Free, No-Pressure Quotes</h3>
-          <p>Text a photo of your space for a fast, honest quote. No sales pressure, no hidden fees — just straightforward pricing.</p>
+          <p>Text a photo of your space for a fast, honest quote. No sales pressure, no hidden fees. Just straightforward pricing.</p>
         </div>
       </div>
     </div>
@@ -381,7 +410,6 @@
   <section class="section before-after-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Real Results</span>
         <h2 class="section-title">See the Difference</h2>
         <p class="section-desc">Real before-and-after results from Bluffton area homes and businesses.</p>
       </div>
@@ -472,49 +500,11 @@
   </section>
 
   <!-- ================================================
-       EMERGENCY CTA BANNER
-  ================================================ -->
-  <section class="emergency-section" id="emergency">
-    <div class="container emergency-inner">
-      <div class="emergency-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      </div>
-      <div class="emergency-text">
-        <h3>Fresh Spill? Act Fast!</h3>
-        <p>Wine, coffee, pet accidents — the sooner we treat it, the better the results. Don't wait, call or text now.</p>
-      </div>
-      <div class="emergency-actions">
-        <a href="tel:2073374841" class="btn btn-white">Call Now</a>
-        <a href="sms:2073374841" class="btn btn-outline-white">Text for Help</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       BOOKING CALENDAR
-  ================================================ -->
-  <section id="booking" class="section booking-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Schedule Your Service</span>
-        <h2 class="section-title">Book an Appointment</h2>
-        <p class="section-desc">Choose a date and time that works for you. We'll confirm your appointment by phone or text.</p>
-      </div>
-      <!-- Calendly inline widget -->
-      <div class="calendly-wrapper">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/carsonhandran/30min" style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
        TESTIMONIALS
   ================================================ -->
   <section class="section testimonials-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Happy Customers</span>
         <h2 class="section-title">What Locals Are Saying</h2>
       </div>
       <div class="testimonials-grid">
@@ -562,7 +552,6 @@
   <section id="faq" class="section faq-section">
     <div class="container faq-container">
       <div class="section-header">
-        <span class="section-label">FAQ</span>
         <h2 class="section-title">Frequently Asked Questions</h2>
       </div>
       <div class="faq-list" id="faqList">
@@ -593,7 +582,7 @@
             <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="faq-answer">
-            <p>Absolutely. We offer chemical-free cleaning using high heat and vapor steam — no chemicals needed at all. When we do use any solution, it's non-toxic and pet/family safe. Just let us know when you book if you have young children or sensitive pets.</p>
+            <p>Absolutely. We offer chemical-free cleaning using high heat and vapor steam, no chemicals needed at all. When we do use any solution, it's non-toxic and pet/family safe. Just let us know when you book if you have young children or sensitive pets.</p>
           </div>
         </div>
 
@@ -603,7 +592,7 @@
             <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="faq-answer">
-            <p>We have excellent results with most stains, including old pet urine, red wine, coffee, and food stains. Some very old or dye-based stains may be permanent (like certain bleach stains or dye transfers), but we'll always give you an honest assessment before we start — no surprise charges.</p>
+            <p>We have excellent results with most stains, including old pet urine, red wine, coffee, and food stains. Some very old or dye-based stains may be permanent (like certain bleach stains or dye transfers), but we'll always give you an honest assessment before we start, with no surprise charges.</p>
           </div>
         </div>
 
@@ -613,7 +602,7 @@
             <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="faq-answer">
-            <p>Yes! We clean offices, lobbies, conference rooms, retail spaces, and more. We can schedule commercial cleanings outside of business hours — early morning, evenings, or weekends — so we don't disrupt your operations. Contact us for a commercial quote.</p>
+            <p>Yes! We clean offices, lobbies, conference rooms, retail spaces, and more. We can schedule commercial cleanings outside of business hours (early morning, evenings, or weekends) so we don't disrupt your operations. Contact us for a commercial quote.</p>
           </div>
         </div>
 
@@ -623,7 +612,7 @@
             <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="faq-answer">
-            <p>Pricing depends on the size of the area, type of surface, and condition. We offer free quotes — just text Heather at 207-337-4841 with your space details or a photo. No pressure, just an honest estimate with no hidden fees.</p>
+            <p>Pricing depends on the size of the area, type of surface, and condition. We offer free quotes: just text Heather at 207-337-4841 with your space details or a photo. No pressure, just an honest estimate with no hidden fees.</p>
           </div>
         </div>
 
@@ -633,7 +622,7 @@
             <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="faq-answer">
-            <p>We serve Bluffton, Hilton Head Island, Sun City Hilton Head, Okatie, Hardeeville, and surrounding Lowcountry areas. We also travel to parts of the Savannah, GA area — contact us to confirm your location.</p>
+            <p>We serve Bluffton, Hilton Head Island, Sun City Hilton Head, Okatie, Hardeeville, and surrounding Lowcountry areas, and can travel to parts of the Savannah, GA area. Contact us to confirm your location.</p>
           </div>
         </div>
 
@@ -657,9 +646,8 @@
   <section class="section service-areas-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Where We Serve</span>
         <h2 class="section-title">Serving Bluffton &amp; the Lowcountry</h2>
-        <p class="section-desc">Based in Bluffton, SC — we clean homes and businesses across the entire Lowcountry region.</p>
+        <p class="section-desc">Based in Bluffton, SC, we clean homes and businesses across the entire Lowcountry region.</p>
       </div>
       <div class="areas-grid">
         <div class="area-card fade-in-up">
@@ -709,23 +697,17 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <a href="#home" class="nav-logo footer-logo">
-            <span class="logo-icon">
-              <svg width="28" height="24" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 24 Q8 10 16 14 Q24 18 30 4" stroke="#6DB8AD" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                <path d="M2 20 Q8 8 16 12 Q24 16 30 2" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-                <rect x="0" y="24" width="32" height="4" rx="2" fill="#6DB8AD"/>
-              </svg>
-            </span>
+            <img src="images/logo.svg" alt="Swanson Carpet &amp; Upholstery Cleaning" class="nav-logo-badge footer-logo-badge" />
             <span class="logo-text">
               <span class="logo-main">Swanson</span>
               <span class="logo-sub">Carpet &amp; Upholstery Cleaning</span>
             </span>
           </a>
           <p class="footer-tagline">Clean. Crisp. Professional. Lowcountry Fresh.</p>
-          <p class="footer-desc">Professional carpet, rug, upholstery, and mattress cleaning serving Bluffton and the entire Lowcountry since day one — by Heather Swanson.</p>
+          <p class="footer-desc">Professional carpet, rug, upholstery, and mattress cleaning serving Bluffton and the entire Lowcountry, by Heather Swanson.</p>
         </div>
         <div class="footer-links-col">
-          <h4>Services</h4>
+          <h3>Services</h3>
           <ul>
             <li><a href="#services">Carpet Cleaning</a></li>
             <li><a href="#services">Upholstery Cleaning</a></li>
@@ -736,7 +718,7 @@
           </ul>
         </div>
         <div class="footer-links-col">
-          <h4>Quick Links</h4>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Heather</a></li>
@@ -745,7 +727,7 @@
           </ul>
         </div>
         <div class="footer-contact-col">
-          <h4>Contact</h4>
+          <h3>Contact</h3>
           <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.58 4.5 2 2 0 0 1 3.54 2.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.78-1.78a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <a href="tel:2073374841">207-337-4841</a>
