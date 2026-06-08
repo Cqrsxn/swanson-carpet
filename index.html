@@ -319,14 +319,8 @@
   <section id="about" class="section about-section">
     <div class="container about-grid">
       <div class="about-image fade-in">
-        <div class="about-photo-placeholder">
-          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="45" r="25" fill="#4A9B8E" opacity="0.3"/>
-            <path d="M20 100 Q20 75 60 75 Q100 75 100 100" fill="#4A9B8E" opacity="0.3"/>
-            <circle cx="60" cy="45" r="20" fill="#4A9B8E" opacity="0.5"/>
-            <path d="M25 98 Q25 78 60 78 Q95 78 95 98" fill="#4A9B8E" opacity="0.5"/>
-          </svg>
-          <p class="placeholder-note">Photo of Heather</p>
+        <div class="about-photo-frame">
+          <img src="images/heather.jpg" alt="Heather Swanson with her carpet cleaning equipment" class="about-photo">
         </div>
         <div class="about-badge-card">
           <div class="about-badge-icon">
@@ -500,49 +494,26 @@
   </section>
 
   <!-- ================================================
-       TESTIMONIALS
+       REVIEWS / TESTIMONIALS
+       To add or edit reviews, update the REVIEWS array in js/app.js.
+       See swanson-carpet/REVIEWS_GUIDE.md for full instructions.
   ================================================ -->
-  <section class="section testimonials-section">
+  <section id="reviews" class="section reviews-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">What Locals Are Saying</h2>
+        <h2 class="section-title">What Our Clients Are Saying</h2>
+        <p class="section-desc">Real feedback from homeowners who trust Swanson Cleaning.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in-up">
-          <div class="stars">★★★★★</div>
-          <p>"Heather did an absolutely incredible job on our carpets. We have two dogs and the pet odors were completely gone. The carpets looked brand new. I couldn't believe it!"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">S</div>
-            <div>
-              <strong>Sarah M.</strong>
-              <span>Bluffton, SC</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-in-up">
-          <div class="stars">★★★★★</div>
-          <p>"Called Heather after a wine spill disaster. She came the next morning and you'd never know anything happened. Fast, professional, and so friendly. Will definitely call again!"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">J</div>
-            <div>
-              <strong>James &amp; Lisa T.</strong>
-              <span>Sun City Hilton Head</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-in-up">
-          <div class="stars">★★★★★</div>
-          <p>"We use Swanson Cleaning for our Airbnb between every guest. Heather is reliable, thorough, and the guests always comment on how fresh everything smells. 10/10 recommend."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">M</div>
-            <div>
-              <strong>Michelle K.</strong>
-              <span>Hilton Head Island</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="testimonial-note">⭐ Reviews coming from Google and Facebook. <a href="sms:2073374841">Text Heather</a> to share your experience!</p>
+    </div>
+    <div class="reviews-marquee" aria-label="Customer reviews">
+      <div class="reviews-track" role="list" aria-label="Customer reviews"></div>
+    </div>
+    <div class="container reviews-cta">
+      <p>Ready for a cleaner home? Book your cleaning today.</p>
+      <a href="#booking" class="btn btn-primary">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Book Your Cleaning
+      </a>
     </div>
   </section>
 
