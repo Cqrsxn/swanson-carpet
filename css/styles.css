@@ -194,7 +194,7 @@ input, select, textarea {
   overflow: hidden;
   padding: 8px 0;
   position: sticky;
-  top: 68px;
+  top: 160px;
   z-index: 999;
 }
 .announcement-track {
@@ -225,16 +225,14 @@ input, select, textarea {
 
 /* ── LOGO BADGE ─────────────────────────────────── */
 .nav-logo-badge {
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
+  height: 140px;
+  width: auto;
+  object-fit: contain;
   flex-shrink: 0;
 }
 .footer-logo-badge {
-  height: 44px;
-  width: 44px;
-  /* invert to work on dark footer bg */
-  filter: brightness(0) invert(1) opacity(0.85);
+  height: 160px;
+  width: auto;
 }
 
 /* ── HEADER / NAV ───────────────────────────────── */
@@ -256,7 +254,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 32px;
-  height: 68px;
+  height: 160px;
 }
 .nav-logo {
   display: flex;
@@ -346,7 +344,7 @@ input, select, textarea {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 68px;
+  padding-top: 160px;
   overflow: hidden;
 }
 .hero-bg {
@@ -1681,13 +1679,14 @@ a.service-card {
   .hero-wave-1 { display: none; }
   .hero-scroll-hint { display: none; }
 
-  .announcement-bar { top: 60px; }
+  .announcement-bar { top: 110px; }
 
   /* Nav */
-  .nav { height: 60px; gap: 0; }
+  .nav { height: 110px; gap: 0; }
+  .nav-logo-badge { height: 100px; }
   .nav-links {
     position: fixed;
-    top: 60px;
+    top: 110px;
     left: 0;
     right: 0;
     background: var(--white);
@@ -1738,7 +1737,7 @@ a.service-card {
   .nav-hamburger { display: flex; }
 
   /* Hero */
-  .hero { min-height: 90vh; padding-top: 60px; }
+  .hero { min-height: 90vh; padding-top: 110px; }
   .hero-content { padding: 60px 24px 80px; }
   .hero-phone-badge { display: none; }
   .hero-ctas { flex-direction: column; }
