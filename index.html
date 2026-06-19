@@ -507,18 +507,23 @@
 
   <!-- ================================================
        REVIEWS / TESTIMONIALS
-       To add or edit reviews, update the REVIEWS array in js/app.js.
+       To add or edit reviews, update the REVIEWS array in
+       js/reviews-data.js (shared with reviews.html).
+       Cards link to reviews.html for the full review text.
        See swanson-carpet/REVIEWS_GUIDE.md for full instructions.
   ================================================ -->
   <section id="reviews" class="section reviews-section">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">What Our Clients Are Saying</h2>
-        <p class="section-desc">Real feedback from homeowners who trust Swanson Cleaning.</p>
+        <p class="section-desc">Real feedback from homeowners who trust Swanson Cleaning. Scroll through, then tap a card to read the full review.</p>
       </div>
     </div>
-    <div class="reviews-marquee" aria-label="Customer reviews">
+    <div class="reviews-scroller" aria-label="Customer reviews">
       <div class="reviews-track" role="list" aria-label="Customer reviews"></div>
+    </div>
+    <div class="container reviews-allcta">
+      <a href="reviews.html" class="reviews-all-link">Read all reviews →</a>
     </div>
     <div class="container reviews-cta">
       <p>Ready for a cleaner home? Book your cleaning today.</p>
@@ -760,6 +765,7 @@
     </a>
   </div>
 
+  <script src="js/reviews-data.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

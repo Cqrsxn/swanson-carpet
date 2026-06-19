@@ -1342,26 +1342,40 @@ a.service-card {
 }
 .reviews-section .section-header { margin-bottom: 44px; }
 
-/* Marquee wrapper — clips the scrolling track */
-.reviews-marquee {
-  overflow: hidden;
+/* User-controlled horizontal scroller — no auto animation.
+   The visitor scrolls/swipes through the cards manually.
+   Scroll-snap gives a smooth, premium feel without sliding on its own. */
+.reviews-scroller {
   width: 100%;
-  padding: 4px 0 28px;
+  padding: 4px 0 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) var(--beige);
 }
-.reviews-marquee:hover .reviews-track {
-  animation-play-state: paused;
+.reviews-scroller::-webkit-scrollbar {
+  height: 8px;
+}
+.reviews-scroller::-webkit-scrollbar-track {
+  background: var(--beige);
+  border-radius: 99px;
+}
+.reviews-scroller::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 99px;
+}
+.reviews-scroller::-webkit-scrollbar-thumb:hover {
+  background: var(--teal-dark);
 }
 
-/* Track scrolls left-to-right: -50% → 0 */
 .reviews-track {
   display: flex;
   gap: 22px;
   width: max-content;
-  animation: reviews-ltr 44s linear infinite;
-}
-@keyframes reviews-ltr {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  padding: 0 24px;
 }
 
 .review-card {
@@ -1371,10 +1385,28 @@ a.service-card {
   padding: 28px 26px;
   width: 320px;
   flex-shrink: 0;
+  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   gap: 14px;
   box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.review-card:hover,
+.review-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal-light);
+  outline: none;
+}
+.review-readmore {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  letter-spacing: 0.2px;
 }
 .review-stars {
   color: var(--gold);
@@ -1420,6 +1452,21 @@ a.service-card {
   color: var(--text-light);
 }
 
+.reviews-allcta {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+.reviews-all-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+.reviews-all-link:hover { border-bottom-color: var(--teal-dark); }
+
 .reviews-cta {
   text-align: center;
   margin-top: 44px;
@@ -1428,18 +1475,6 @@ a.service-card {
   font-size: 1.05rem;
   color: var(--text-med);
   margin-bottom: 18px;
-}
-
-/* Reduced motion: static responsive grid, no animation */
-@media (prefers-reduced-motion: reduce) {
-  .reviews-track {
-    animation: none;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    padding: 0 24px;
-  }
-  .reviews-marquee { overflow: visible; padding-bottom: 0; }
 }
 
 /* ── FAQ ────────────────────────────────────────── */

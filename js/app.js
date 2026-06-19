@@ -6,65 +6,38 @@
 
 'use strict';
 
-// ── REVIEWS DATA ─────────────────────────────────
-// To add, edit, or remove a review, update this array only.
-// See REVIEWS_GUIDE.md for instructions.
-const REVIEWS = [
-  {
-    name: 'Heather S.',
-    location: 'Bluffton, SC',
-    rating: 5,
-    text: 'Swanson Cleaning did an amazing job. The house felt fresh, clean, and taken care of. They were friendly, professional, and easy to work with.',
-  },
-  {
-    name: 'Tristen S.',
-    location: 'Hilton Head, SC',
-    rating: 5,
-    text: 'Very reliable and detailed. It was so nice coming home to everything looking spotless. I would definitely recommend them.',
-  },
-  {
-    name: 'Sarah M.',
-    location: 'Okatie, SC',
-    rating: 5,
-    text: 'Great communication, great service, and the cleaning looked even better than expected. I\'ll definitely be using them again.',
-  },
-  {
-    name: 'Amanda R.',
-    location: 'Bluffton, SC',
-    rating: 5,
-    text: 'They were on time, professional, and paid attention to the little details. The whole house looked and smelled amazing.',
-  },
-  {
-    name: 'Lauren T.',
-    location: 'Hilton Head, SC',
-    rating: 5,
-    text: 'Booking was easy and the cleaning was excellent. I felt like they really cared about doing the job right.',
-  },
-];
-
-function buildReviewCard(review) {
-  const stars = '★'.repeat(review.rating);
+// ── REVIEWS ──────────────────────────────────────
+// Review data lives in js/reviews-data.js (shared with reviews.html).
+// The homepage shows a short, clickable preview of each review that
+// links to the full Reviews page. See REVIEWS_GUIDE.md.
+function buildReviewPreviewCard(review) {
+  const stars   = '★'.repeat(review.rating);
   const initial = review.name.charAt(0);
-  return `<div class="review-card" role="listitem">
+  const preview = window.reviewPreview(review.text);
+  const more    = preview.truncated
+    ? '<span class="review-readmore">Read full review →</span>'
+    : '<span class="review-readmore">Read on Reviews page →</span>';
+  const location = review.location
+    ? `<span>${review.location}</span>`
+    : '';
+  return `<a class="review-card" role="listitem" href="reviews.html#review-${review.id}" aria-label="Read ${review.name}'s full review">
     <div class="review-stars" aria-label="${review.rating} out of 5 stars">${stars}</div>
-    <blockquote class="review-text">“${review.text}”</blockquote>
+    <blockquote class="review-text">“${preview.text}”</blockquote>
+    ${more}
     <div class="review-author">
       <div class="review-avatar" aria-hidden="true">${initial}</div>
       <div>
         <strong>${review.name}</strong>
-        <span>${review.location}</span>
+        ${location}
       </div>
     </div>
-  </div>`;
+  </a>`;
 }
 
 function initReviews() {
   const track = document.querySelector('.reviews-track');
-  if (!track) return;
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const cards = REVIEWS.map(buildReviewCard).join('');
-  // Duplicate for seamless marquee loop; skip duplication for reduced motion
-  track.innerHTML = prefersReduced ? cards : cards + cards;
+  if (!track || !window.REVIEWS) return;
+  track.innerHTML = window.REVIEWS.map(buildReviewPreviewCard).join('');
 }
 
 initReviews();
