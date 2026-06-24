@@ -24,6 +24,24 @@ I also had my area rug cleaned, and was shocked by how much dirt she removed…e
 
 What truly sets her apart is her integrity and care. I trusted her completely in my home, even when I wasn't there, and she cleaned and treated my items as if they were her own. It's beyond refreshing to work with a small business owner who genuinely cares about doing exceptional work, not just rushing through another appointment. My home looks cleaner, feels fresher, and I KNOW we're breathing in less dust, dander, and allergens because of her work. Absolutely worth every penny!`,
   },
+  {
+    id: 'isabel-hahn',
+    name: 'Isabel Hahn',
+    location: '',
+    rating: 5,
+    text: `Heather has cleaned carpets for me twice now and did a great job both times. Most recently she cleaned my area rug and carpeted stairs, and they came out looking great. She was on time, professional, and worked hard.
+
+She also came out late one evening when my cat had a major accident on my bedroom carpet and nobody else was willing to come that quickly. I really appreciated the fast response and wouldn't hesitate to use her again.`,
+  },
+  {
+    id: 'jessica-hensel',
+    name: 'Jessica Hensel',
+    location: '',
+    rating: 5,
+    text: `Heather did an amazing job cleaning my white couches! They had accumulated everyday dirt and stains, and I honestly didn't think they could look this good again. We tried a larger company prior and they could not get them clean! Heather was professional, thorough, and paid close attention to every detail. My couches look fresh, bright, and almost brand new.
+
+She arrived on time, was friendly and knowledgeable, and took great care while working in my home. I was impressed by both the quality of her work and the results. If you're looking for someone reliable who does exceptional upholstery cleaning, I highly recommend Heather. I'll definitely be using her services again!`,
+  },
 ];
 
 // Make available to plain <script> includes on both pages.
