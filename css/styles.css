@@ -905,7 +905,7 @@ a.service-card {
   gap: 8px;
   padding: 16px;
 }
-.ba-image { flex: 1; }
+.ba-image { flex: 1; position: relative; border-radius: var(--radius-md); overflow: hidden; }
 .ba-placeholder {
   background: var(--beige-dark);
   border-radius: var(--radius-md);
@@ -925,6 +925,14 @@ a.service-card {
 .ba-img-icon { color: var(--text-light); }
 .ba-img-icon svg { width: 32px; height: 32px; margin: 0 auto; }
 .ba-placeholder--after .ba-img-icon { color: var(--teal); }
+.ba-photo {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--beige-dark);
+}
 .ba-label-tag {
   position: absolute;
   top: 6px;
@@ -937,6 +945,7 @@ a.service-card {
   padding: 2px 7px;
   border-radius: 4px;
   letter-spacing: 0.06em;
+  z-index: 1;
 }
 .ba-label-tag--after { background: var(--teal-dark); }
 .ba-arrow {
@@ -958,6 +967,32 @@ a.service-card {
   margin-top: 32px;
   font-size: 0.9rem;
   color: var(--text-med);
+}
+
+/* ── FINISHED RESULTS GALLERY ───────────────────── */
+.finished-section { background: var(--white); }
+.finished-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.finished-card {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.finished-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.finished-photo {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: var(--beige-dark);
 }
 
 /* ── EMERGENCY BANNER ───────────────────────────── */
@@ -1702,6 +1737,7 @@ a.service-card {
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .before-after-grid { grid-template-columns: repeat(2, 1fr); }
+  .finished-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-photo-placeholder { height: 280px; }
   .about-badge-card { bottom: 24px; right: 12px; padding: 10px 14px; }
@@ -1796,6 +1832,10 @@ a.service-card {
 
   /* Before/After */
   .before-after-grid { grid-template-columns: 1fr; }
+
+  /* Finished Results */
+  .finished-grid { grid-template-columns: 1fr; }
+  .finished-photo { height: 240px; }
 
   /* Emergency */
   .emergency-inner { flex-direction: column; text-align: center; }

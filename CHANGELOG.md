@@ -4,6 +4,21 @@ All meaningful changes to the website, in reverse chronological order.
 
 ---
 
+## 2026-07-01
+
+### Added real Before/After photos and a new Finished Results gallery
+- **What:**
+  - Carson supplied 7 new phone photos in `images/` (2 before/after pairs + 3 finished-result shots). Auto-oriented, resized, and compressed them to WebP with ImageMagick, cutting total size from ~46MB to ~1.2MB.
+  - Filled in 2 of the 3 existing "Photo Coming Soon" placeholder cards in the **See the Difference** (before/after) section with the real photo pairs: `before-after-1-before/after.webp` (area rug deep clean) and `before-after-2-before/after.webp` (stain removal). Third card left as-is since there's no third pair yet.
+  - Added a new **Finished Results** section (`.finished-section` / `.finished-grid`) directly after the before/after section, showcasing `finished-product-1/2/3.webp` in a responsive 3→2→1 column card gallery.
+  - All new images use `loading="lazy"`, descriptive SEO alt text, and explicit width/height attributes.
+- **Why:** Client added real work photos and wanted them showcased professionally instead of the placeholder state.
+- **Files:** `index.html`, `css/styles.css`, `images/before-after-1-before.webp`, `images/before-after-1-after.webp`, `images/before-after-2-before.webp`, `images/before-after-2-after.webp`, `images/finished-product-1.webp`, `images/finished-product-2.webp`, `images/finished-product-3.webp`
+- **Note:** Original uncompressed source photos (`carpet before.jpeg`, `carpet after.jpeg`, `circlestainbefore.jpeg`, `circlestainafter.jpeg`, `no-b&a-justcleanedcarpet*.jpeg`) were left untouched in `images/` — only new optimized copies were created and referenced on the page.
+- **Commit:** _not committed — pending Carson's review_
+
+---
+
 ## 2026-06-19
 
 ### Reworked the reviews system — real review + manual scroll + dedicated page
