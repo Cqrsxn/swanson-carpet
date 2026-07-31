@@ -1035,22 +1035,6 @@ a.service-card {
   flex-wrap: wrap;
 }
 
-/* ── BOOKING ────────────────────────────────────── */
-.booking-section {
-  background: var(--cream);
-}
-
-/* Calendly embed wrapper */
-.calendly-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  border: 1px solid var(--beige-dark);
-}
-
 /* ── OLD CUSTOM CALENDAR (kept for reference, not used) ── */
 .booking-wrapper {
   max-width: 760px;
@@ -1724,14 +1708,8 @@ a.service-card {
 .sticky-text {
   background: var(--navy);
   color: var(--white);
-  border-right: 1px solid rgba(255,255,255,0.1);
 }
 .sticky-text:hover { background: var(--navy-dark); }
-.sticky-book {
-  background: var(--gold);
-  color: var(--navy-dark);
-}
-.sticky-book:hover { background: #b8963e; color: var(--navy-dark); }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 1024px) {

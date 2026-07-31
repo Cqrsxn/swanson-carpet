@@ -4,6 +4,23 @@ All meaningful changes to the website, in reverse chronological order.
 
 ---
 
+## 2026-07-31
+
+### Removed the Calendly booking calendar
+- **What:**
+  - Deleted the "Book an Appointment" section (`id="booking"`) and its Calendly inline widget/script from `index.html` at Heather's request.
+  - Repointed every "Book Now" / "Book an Appointment" / "Book This Service" / "Book Your Cleaning" link across `index.html` and `reviews.html` (nav, header CTA, hero, service cards, reviews CTA, footer quick links — ~14 spots) from `#booking` to `tel:2073374841`, so they now call Heather directly instead of scrolling to a section that no longer exists.
+  - Removed the redundant third "Book" button from the sticky mobile CTA bar (it would have duplicated the adjacent "Call" button); the bar now shows Call + Text.
+  - Removed the now-dead `.booking-section`, `.calendly-wrapper`, and `.sticky-book` CSS rules, and the `border-right` separator on `.sticky-text` that was only needed with a third button.
+  - Removed `'booking'` from the scroll-spy `sections` array in `js/app.js` and updated stale comments referencing Calendly.
+  - Rewrote the "Information We Collect" / "How We Use Your Information" / "Your Choices" sections of `privacy-policy.html` and removed the "Use of Calendly" and "Third-Party Services" sections, since the site no longer collects any information via a booking tool — booking now happens by phone/text off-site. Bumped the policy's effective date to July 31, 2026.
+- **Why:** Heather no longer wants a self-serve calendar on the site; she wants people to call or text her directly to book.
+- **Files:** `index.html`, `reviews.html`, `privacy-policy.html`, `css/styles.css`, `js/app.js`, `DECISIONS.md`
+- **Note:** Fully deleted rather than commented out. It's reversible via git history if Heather wants it back later — see updated `DECISIONS.md`.
+- **Commit:** _not committed — pending Carson's review_
+
+---
+
 ## 2026-07-01
 
 ### Added real Before/After photos and a new Finished Results gallery
