@@ -1,7 +1,6 @@
 /* ================================================
    SWANSON CARPET & UPHOLSTERY CLEANING
    Main App JavaScript
-   Booking is handled by Calendly embed in index.html
    ================================================ */
 
 'use strict';
@@ -70,7 +69,7 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ── Active Nav Link on Scroll ────────────────────
-const sections = ['home', 'services', 'booking', 'about', 'faq', 'contact'];
+const sections = ['home', 'services', 'about', 'faq', 'contact'];
 
 function updateActiveNavLink() {
   const scrollY = window.scrollY + 100;
@@ -118,7 +117,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Service cards are <a href="#booking"> / <a href="#emergency"> in HTML — no JS needed.
+// Service cards are <a href="sms:..."> / <a href="#emergency"> in HTML — no JS needed.
 
 // ── Smooth Scroll ────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
