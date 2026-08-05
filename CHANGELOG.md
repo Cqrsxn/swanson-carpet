@@ -40,20 +40,19 @@ All meaningful changes to the website, in reverse chronological order.
 
 ---
 
-## 2026-07-31
+## 2026-08-01
 
-### Removed the Calendly booking calendar
+### Removed the Calendly booking calendar (completed cleanup + added email)
 - **What:**
   - Deleted the "Book an Appointment" section (`id="booking"`) and its Calendly inline widget/script from `index.html` at Heather's request.
-  - Repointed every "Book Now" / "Book an Appointment" / "Book This Service" / "Book Your Cleaning" link across `index.html` and `reviews.html` (nav, header CTA, hero, service cards, reviews CTA, footer quick links — ~14 spots) from `#booking` to `tel:2073374841`, so they now call Heather directly instead of scrolling to a section that no longer exists.
-  - Removed the redundant third "Book" button from the sticky mobile CTA bar (it would have duplicated the adjacent "Call" button); the bar now shows Call + Text.
-  - Removed the now-dead `.booking-section`, `.calendly-wrapper`, and `.sticky-book` CSS rules, and the `border-right` separator on `.sticky-text` that was only needed with a third button.
+  - Repointed every "Book Now" / "Book an Appointment" / "Book This Service" / "Book Your Cleaning" CTA across `index.html` and `reviews.html` (nav, header button, hero, service cards, reviews CTA, footer quick links, sticky mobile bar) so both the link target *and* the label match: call/text CTAs now say "Call for a Free Quote," "Text About This Service," etc. instead of leaving stale "Book..." labels pointing at `tel:`/`sms:` links.
+  - Added Heather's email (`heather.razin@yahoo.com`) as a contact method for the first time — footer contact column, sticky mobile bar (replaced the old "Book" button with "Email"), and both legal pages.
+  - Removed the now-dead `.booking-section`, `.calendly-wrapper`, `.sticky-book` CSS rules, and the entire ~320-line "OLD CUSTOM CALENDAR (kept for reference, not used)" block (calendar grid, timeslot grid, booking form/steps/confirmation styles) that had been sitting unused in `css/styles.css` since before Calendly was even added.
   - Removed `'booking'` from the scroll-spy `sections` array in `js/app.js` and updated stale comments referencing Calendly.
-  - Rewrote the "Information We Collect" / "How We Use Your Information" / "Your Choices" sections of `privacy-policy.html` and removed the "Use of Calendly" and "Third-Party Services" sections, since the site no longer collects any information via a booking tool — booking now happens by phone/text off-site. Bumped the policy's effective date to July 31, 2026.
-- **Why:** Heather no longer wants a self-serve calendar on the site; she wants people to call or text her directly to book.
-- **Files:** `index.html`, `reviews.html`, `privacy-policy.html`, `css/styles.css`, `js/app.js`, `DECISIONS.md`
-- **Note:** Fully deleted rather than commented out. It's reversible via git history if Heather wants it back later — see updated `DECISIONS.md`.
-- **Commit:** `9e5bda6` — pushed to `main`
+  - Rewrote the "Information We Collect" / "How We Use Your Information" / "Your Choices" sections of `privacy-policy.html` and replaced "Use of Calendly" with a "Website Analytics" section (Google Analytics is still in use), since the site no longer collects any information via a booking tool.
+- **Why:** Heather no longer wants a self-serve calendar on the site; a prior pass (2026-07-31) swapped the `#booking` links to `tel:` but left every button still labeled "Book Now"/"Book This Service" with no calendar behind it, and left the dead CSS in place. This pass finishes that cleanup and adds email as a real second contact channel per Carson's follow-up request.
+- **Files:** `index.html`, `reviews.html`, `privacy-policy.html`, `cancellation-policy.html`, `css/styles.css`, `js/app.js`
+- **Note:** Fully deleted rather than commented out. Reversible via git history if Heather wants a booking tool back later.
 
 ---
 

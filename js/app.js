@@ -147,7 +147,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Service cards are <a href="tel:..."> / <a href="#emergency"> in HTML — no JS needed.
+// Service cards are <a href="sms:..."> / <a href="#emergency"> in HTML — no JS needed.
 
 // ── Smooth Scroll ────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
