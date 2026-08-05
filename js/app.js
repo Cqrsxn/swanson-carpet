@@ -42,13 +42,13 @@ function initReviews() {
 initReviews();
 
 // ── Footer Year ─────────────────────────────────
-document.getElementById('footerYear').textContent = new Date().getFullYear();
+const footerYearEl = document.getElementById('footerYear');
+if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
 
 // ── Sticky Header on Scroll ──────────────────────
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 20);
-  updateActiveNavLink();
 }, { passive: true });
 
 // ── Mobile Nav Hamburger ─────────────────────────
@@ -68,18 +68,13 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// ── Active Nav Link on Scroll ────────────────────
-const sections = ['home', 'services', 'about', 'faq', 'contact'];
-
-function updateActiveNavLink() {
-  const scrollY = window.scrollY + 100;
-  let current = 'home';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && el.offsetTop <= scrollY) current = id;
-  });
+// ── Active Nav Link (multi-page) ─────────────────
+// Each page sets <body data-nav="home|services|about|faq|contact">
+// and each nav link sets data-nav="..." to match.
+const currentNav = document.body.dataset.nav;
+if (currentNav) {
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    link.classList.toggle('active', link.dataset.nav === currentNav);
   });
 }
 
@@ -106,6 +101,41 @@ document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => observer.observ
 setTimeout(() => {
   document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => el.classList.add('visible'));
 }, 1200);
+
+// ── About Photo Rotator ──────────────────────────
+function initAboutRotator() {
+  const rotator = document.getElementById('aboutRotator');
+  if (!rotator) return;
+
+  const slides = Array.from(rotator.querySelectorAll('.rotator-slide'));
+  const dots   = Array.from(rotator.querySelectorAll('.rotator-dot'));
+  const prevBtn = rotator.querySelector('.rotator-prev');
+  const nextBtn = rotator.querySelector('.rotator-next');
+  let index = 0;
+  let timer = null;
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((slide, n) => slide.classList.toggle('is-active', n === index));
+    dots.forEach((dot, n) => dot.classList.toggle('is-active', n === index));
+  }
+
+  function restartAutoplay() {
+    clearInterval(timer);
+    timer = setInterval(() => show(index + 1), 5000);
+  }
+
+  prevBtn.addEventListener('click', () => { show(index - 1); restartAutoplay(); });
+  nextBtn.addEventListener('click', () => { show(index + 1); restartAutoplay(); });
+  dots.forEach((dot, n) => dot.addEventListener('click', () => { show(n); restartAutoplay(); }));
+
+  rotator.addEventListener('mouseenter', () => clearInterval(timer));
+  rotator.addEventListener('mouseleave', restartAutoplay);
+
+  restartAutoplay();
+}
+
+initAboutRotator();
 
 // ── FAQ Accordion ────────────────────────────────
 document.querySelectorAll('.faq-question').forEach(btn => {
