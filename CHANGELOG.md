@@ -6,6 +6,15 @@ All meaningful changes to the website, in reverse chronological order.
 
 ## 2026-08-05
 
+### Fixed link-preview image (no og:image existed on any page)
+- **What:** Carson noticed that texting/sharing the site link showed a random, unrelated photo (a cleaned rug) instead of anything intentional. Cause: no page had an `og:image` meta tag at all, so link-preview crawlers (iMessage, social apps) fell back to grabbing whatever image they found first on the page. Added `og:image` (Carson's chosen smiling photo of Heather with her equipment, cropped/compressed to `images/og-image.jpg`, 800x1200), plus `og:url`, `og:title`, `og:description`, `og:image:width/height/alt`, and `twitter:card`/`twitter:image` to every page's `<head>` — same image site-wide for consistent branding whichever page gets shared.
+- **Why:** Carson's own link previews as broken/embarrassing when shared; this was a pre-existing gap that predated the multi-page split, just never noticed until now.
+- **Files:** all 18 `.html` pages, `images/og-image.jpg` (new)
+- **Note:** Apple/iMessage and some social platforms cache link previews aggressively — if the old broken preview still shows up right after deploy, it may take a bit for the cache to refresh, or Carson can force a refresh by sharing to a fresh conversation.
+- **Commit:** `f1a2d04`
+
+---
+
 ### Multi-page restructure: Services/About/FAQ/Contact as their own pages, hero rewrite, Book Now removed
 - **What:**
   - **Multi-page conversion** — Split the single-page site into a real multi-page static site. `index.html` is now a trimmed homepage; Services, About, and FAQ moved off it entirely into their own pages: `services.html` (hub linking to all 9 services), one page per service (`carpet-cleaning.html`, `upholstery-cleaning.html`, `area-rug-cleaning.html`, `mattress-cleaning.html`, `move-in-move-out-cleaning.html`, `short-term-rental-cleaning.html`, `emergency-stain-cleanup.html`, `pet-odor-removal.html`, `commercial-cleaning.html`), `about.html`, `faq.html`. Each service page has the icon, a short explanation, and Call/Text buttons. All new pages share identical nav/footer/sticky-CTA markup with the homepage (same pattern already used by `reviews.html`).
