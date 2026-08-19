@@ -11,6 +11,8 @@ const MIME = {
   '.js':   'application/javascript',
   '.png':  'image/png',
   '.jpg':  'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.svg':  'image/svg+xml',
   '.ico':  'image/x-icon',
 };
@@ -26,7 +28,7 @@ http.createServer((req, res) => {
     if (err) {
       res.writeHead(404); res.end('Not found');
     } else {
-      res.writeHead(200, { 'Content-Type': mime });
+      res.writeHead(200, { 'Content-Type': mime, 'Cache-Control': 'no-store' });
       res.end(data);
     }
   });

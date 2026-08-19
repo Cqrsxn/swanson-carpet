@@ -1663,12 +1663,22 @@ a.service-card {
   .nav-hamburger { display: flex; }
 
   /* Hero */
-  .hero { min-height: 90vh; padding-top: 110px; }
+  /* Full-height hero on mobile: gives the centred text enough room to sit
+     below the top photo row instead of riding up over it on short screens. */
+  .hero { min-height: 100vh; min-height: 100svh; padding-top: 110px; }
   .hero-content { padding: 60px 24px 80px; }
   .hero-phone-badge { display: none; }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
-  .hero-collage { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+  /* `top: 110px` keeps the grid clear of the fixed, opaque header —
+     without it the top row's subjects are hidden behind the nav bar. */
+  .hero-collage {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    top: 110px;
+  }
+  .hero-collage img:nth-child(1) { object-position: center top; }
+  .hero-collage img:nth-child(2) { object-position: 35% center; }
 
   /* Services */
   .services-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }

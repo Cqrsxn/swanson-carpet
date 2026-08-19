@@ -4,6 +4,23 @@ All meaningful changes to the website, in reverse chronological order.
 
 ---
 
+## 2026-08-18
+
+### New hero photo of Heather + fixed it being hidden behind the nav on mobile
+- **What:**
+  - Heather sent a new photo (smiling straight at camera while extracting a couch) that she wanted used across the site. Cropped/compressed to `images/hero-action-5.webp` (900x1500) and swapped into the hero collage's first tile on `index.html` and the About rotator's last slide on `about.html`. `hero-action-1.webp` is no longer referenced (left in the repo, not deleted).
+  - Replaced the hero collage's third tile (`hero-action-3.webp`, a wide overhead room shot where Heather is a small distant figure) with `about-action-3.webp`, where she's clearly the subject — Carson's call.
+  - **The real mobile bug:** `.header` is `position: fixed`, 111px tall and opaque, and `.hero-collage` is `inset: 0` — so the top ~111px of the top-row photos sat *behind* the nav bar, hiding Heather's face. No amount of `object-position` could fix it (it can't reveal pixels above the image's own top edge). Fixed by starting the collage below the header on mobile (`.hero-collage { top: 110px }`).
+  - **Second mobile bug:** with the photo grid corrected, the centred hero text then overlapped her face. On short viewports the 90vh hero squeezed the text upward into the top photo row. Fixed by making the mobile hero full-height (`min-height: 100svh`, with a `100vh` fallback), which lets the centred text sit below the top row.
+  - Added `?v=N` cache-busting query strings to `css/styles.css` (all 18 pages) and to the `hero-action-5.webp` references. **Bump these whenever you change the CSS or replace that image** — without it, browsers (and phones especially) keep serving the stale copy and edits appear to do nothing.
+  - `server.js` (local dev only, not deployed): added `.webp`/`.jpeg` MIME types — WebP images were being served as `text/plain` — and `Cache-Control: no-store` so local edits show up immediately.
+- **Why:** Heather asked for the new photo site-wide; Carson then reported her head was cut off / covered by text on mobile.
+- **Verified:** measured in Chrome at real mobile viewports (face top/bottom vs. header bottom and headline top) — clears at 390x844 (iPhone 14/15), 430x932 (Pro Max), and 360x800 (Android). Desktop (1440x900) unchanged: collage still starts at `top: 0` and the layout is untouched.
+- **Known limitation:** at 375x667 (iPhone SE/8) the headline still overlaps her face. That viewport is too short for the hero's content — the trust row already collided with the bottom curve there *before* these changes. Fixing it means shrinking the hero type/buttons on very short screens, which is a real design change — not done without Carson's say-so.
+- **Files:** all 18 `.html` pages (cache-bust), `index.html`, `about.html`, `css/styles.css`, `server.js`, `images/hero-action-5.webp` (new), `HANDOFF.md` (new)
+
+---
+
 ## 2026-08-05
 
 ### Fixed link-preview image (no og:image existed on any page)
