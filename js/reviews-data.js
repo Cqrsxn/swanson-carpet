@@ -42,6 +42,13 @@ She also came out late one evening when my cat had a major accident on my bedroo
 
 She arrived on time, was friendly and knowledgeable, and took great care while working in my home. I was impressed by both the quality of her work and the results. If you're looking for someone reliable who does exceptional upholstery cleaning, I highly recommend Heather. I'll definitely be using her services again!`,
   },
+  {
+    id: 'joanna-pennino',
+    name: 'Joanna Pennino',
+    location: 'Beaufort, SC',
+    rating: 5,
+    text: `Heather went above and beyond in her responsiveness, attention to detail, and professional courtesy. She was quick to tackle the emergency of red wine spilled on an ivory couch. Heather took the trek out to Beaufort with short notice. Upon arrival, she promptly assessed the stain, and diligently went to work to save the family couch. I highly recommend giving Heather a call if you have upholstery in need of a professional cleanup!`,
+  },
 ];
 
 // Make available to plain <script> includes on both pages.

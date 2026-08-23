@@ -1,6 +1,20 @@
-﻿# Swanson Cleaning — Changelog
+# Swanson Cleaning — Changelog
 
 All meaningful changes to the website, in reverse chronological order.
+
+---
+
+## 2026-08-23
+
+### Third before/after (ivory couch, red wine), 3 new gallery photos, Joanna Pennino review
+- **What:**
+  - Replaced the third "See the Difference" card's "Photo Coming Soon" placeholder with the real Beaufort job: `images/before-after-3-before.webp` / `-after.webp` (1000x1000 each), caption changed from "Area Rug — Deep Soil Extraction" to "Ivory Couch — Red Wine Stain Removal". All three before/after cards now use identical real-photo markup (`.ba-label-tag` + `.ba-photo` inside `.ba-image`) — no `.ba-placeholder` markup remains on any page.
+  - Added three upholstery results to the Finished Results gallery: `images/finished-product-4/5/6.webp` (1200x900 each), bringing it to a full 3x2 grid.
+  - Added Joanna Pennino's 5-star review to `js/reviews-data.js` (shared by the homepage scroller and `reviews.html`). She's the first review with a `location` set (`Beaufort, SC`), so her card shows a location line the other three don't — intentional, and it names a service area the site otherwise only mentions in passing.
+- **Why:** Heather's Beaufort red-wine-on-an-ivory-couch job produced both the first genuine upholstery before/after the site could show and the review describing it, so the photos and the testimonial land together.
+- **Verified:** served from `node server.js` on :3456 — all 12 before/after + gallery images return 200 and decode at their declared intrinsic sizes, no broken images, no console errors on `index.html` or `reviews.html`. Both new sections render correctly at 1556px wide; the gallery stays a uniform 3x2 grid despite the new photos being landscape where 1–3 are portrait (`.finished-photo` is fixed-height `object-fit: cover`).
+- **No CSS change, so no `?v=` bump needed** — `.ba-photo` and `.ba-label-tag` already existed and were already in use by cards 1 and 2.
+- **Files:** `index.html`, `js/reviews-data.js`, `images/before-after-3-before.webp`, `images/before-after-3-after.webp`, `images/finished-product-4.webp`, `images/finished-product-5.webp`, `images/finished-product-6.webp` (all 5 images new)
 
 ---
 
